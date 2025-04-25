@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Product Preview</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        <picture class="product-image">
+          <source
+            media="(max-width: 32.5rem)"
+            srcset="./assets/image-product-mobile.jpg"
+          />
+          <source
+            media="(max-width: 90rem)"
+            srcset="./assets/image-product-desktop.jpg"
+          />
+          <img
+            class="image"
+            src="./assets/image-product-desktop.jpg"
+            alt="Product image"
+          />
+        </picture>
+      </div>
+      <section class="main">
+        <p class="category">Perfume</p>
+
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+
+        <p class="product-info">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+
+        <div class="pricing">
+          <p class="new-price">$149.99</p>
+          <p class="old-price">$169.99</p>
+        </div>
+
+        <a href="#">
+          <button id="add-to-cart">
+            <span class="cart-icon">
+              <img src="./assets/icon-cart.svg" alt="cart icon" /> </span
+            >Add to Cart
+          </button>
+        </a>
+      </section>
+    </div>
+
+    <script>
+      function addToCart() {
+        const addButton = document.querySelector("#add-to-cart");
+        addButton.addEventListener("click", () => {
+          if (addButton.innerText === "Add to Cart") {
+            addButton.innerText = "Added to Cart ✓";
+            addButton.style.backgroundColor = "black";
+          } else {
+            addButton.innerHTML = `
+            <span class="cart-icon">
+              <img src="./assets/icon-cart.svg" alt="cart icon" /> </span
+            >Add to Cart
+            `;
+            addButton.style.backgroundColor = "";
+          }
+        });
+      }
+      addToCart();
+    </script>
+  </body>
+</html>
