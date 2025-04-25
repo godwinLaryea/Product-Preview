@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg-color: hsl(30, 38%, 92%);
+  --primary-bg-color: hsl(158, 36%, 37%);
+  --secondary-bg-color: hsl(158, 42%, 18%);
+  --font-color: hsl(228, 12%, 48%);
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  font-size: .875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 1.5rem 1rem;
+}
+
+.wrapper {
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 1fr;
+  width: min(100%, 37.5rem);
+  border-radius: .5rem;
+}
+
+@media (min-width: 32.5rem) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+@media screen and (min-width: 32.5rem) {
+
+  .image {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.category {
+  color: var(--font-color);
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.main h1 {
+  font-size: 2rem;
+  font-family: "Fraunces", sans-serif;
+}
+
+.product-info {
+  color: var(--font-color);
+  font-size: clamp(.875rem, 2vw ,1rem);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.new-price {
+  color: var(--primary-bg-color);
+  font-size: 1.9rem;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+}
+
+.old-price {
+  color: var(--font-color);
+  font-family: "Montserrat", sans-serif;
+  text-decoration: line-through;
+}
+
+.main a {
+  width: 100%;
+}
+
+.main a button {
+  background-color: var(--primary-bg-color);
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  border: none;
+  border-radius: .5rem;
+  width: min(100%, 20rem);
+  padding: .7em 0;
+  cursor: pointer;
+}
+
+.main a button:hover {
+  background-color: var(--secondary-bg-color);
+}
+
+.cart-icon img {
+  width: .875rem;
+}
